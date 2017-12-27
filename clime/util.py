@@ -10,6 +10,15 @@ def json(s):
     import json
     return json.loads(s)
 
+def path(s):
+    '''convert a string `s` into a python's Path.'''
+    try:
+        # python 3.4+
+        from pathlib import Path
+    except ImportError:
+        from pathlib2 import Path
+    return Path(s)
+
 def autotype(s):
     '''Automatively detect the type (int, float or string) of `s` and convert
     `s` into it.'''

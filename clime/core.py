@@ -10,7 +10,7 @@ import inspect
 import re
 from os.path import basename
 from collections import defaultdict
-from .util import json, autotype, getargspec
+from .util import json, autotype, getargspec, path
 
 Empty = type('Empty', (object, ), {
     '__nonzero__': lambda self: False,
@@ -64,6 +64,7 @@ class Command(object):
         's': str, 'str': str, 'string': str,
         'f': float, 'float': float,
         'json': json,
+        'path': path,
         None: autotype
     }
     '''A metavar implies a type.
