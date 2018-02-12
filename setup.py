@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import sys
+
 from setuptools import setup, find_packages
 
 import clime
@@ -29,6 +31,7 @@ setup(
     ],
 
     packages = find_packages(),
+    install_requires = ['pathlib2'] if sys.version_info < (3,) else [],
 
     entry_points = {
         'console_scripts': [
